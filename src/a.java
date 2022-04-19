@@ -16,6 +16,7 @@ class Utenti {
     private String password;
 
     public Utenti(String n, String c, String cdf, String usnm,String ind, String em, String pw){
+        
         nome = n;
         cognome = c;
         codfis = cdf;
