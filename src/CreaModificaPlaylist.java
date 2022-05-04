@@ -1,16 +1,15 @@
-package com.company;
+package com.example.visualizzals;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import com.opencsv.exceptions.CsvException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
-public class CreaModificaPlaylist extends Main{
+public class CreaModificaPlaylist extends HelloController{
     /*
-       System.out.println("inserisci la path");
+        System.out.println("inserisci la path");
         String path=sc.nextLine();
         System.out.println("inserisci il nome della playlist");
         String nomePy=sc.nextLine();
@@ -19,6 +18,30 @@ public class CreaModificaPlaylist extends Main{
      */
      //Metodo CreaPlaylist() permette di creare un playlist sottoforma di file.csv
      //partendo da un repository di canzoni gia esistente "Canzoni.dati.csv"
+
+
+    public static  ArrayList<String> GetRepository(String PathRepository){
+        Scanner sc=new Scanner(System.in);
+        ArrayList<String> catalogo = new ArrayList<String>();
+        try {
+            String pathRepository=PathRepository;
+            //lettura del file csv
+            BufferedReader br = new BufferedReader( new FileReader(pathRepository));
+            while( (pathRepository = br.readLine()) != null)
+            {
+                //aggiunta all'arraylist catalogo di tutti gli elementi contenuti nel file canzoni.dati.csv
+                catalogo.add(pathRepository);
+            }
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return catalogo;
+    }
+
     public static void CreaPlaylist(String filePath,String PathRepository) {
         //creazione scanner per l'input dei dati
         Scanner sc=new Scanner(System.in);
@@ -94,7 +117,7 @@ public class CreaModificaPlaylist extends Main{
         }
     }
     //il metodo AggungiBrani() consente di aggiungere brani ad una playlist "sottoforma di file.csv" già esistente
-    public static void AggungiBrani(String PathRepository, String filePath, int index) throws IOException, CsvException {
+    public static void AggungiBrani(String PathRepository, String filePath, int index) throws IOException {
         //creazione scanner per l'input dei dati
         Scanner sc=new Scanner(System.in);
         //creazione di un arraylist di stringhe "catalogo" che andrà a contenere tutto il file canzoni.dati.csv
