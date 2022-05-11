@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.Scanner;
 
 public class Utenti {
     String path = "../data/";
@@ -23,11 +24,10 @@ public class Utenti {
         password = pw;
         Registrazione();
     }
-    public Utenti(String cred, String pass){ // Credenziale può essere username o email
+    public Utenti(){ 
     
-        Login(cred, pass);
     }
-    private void Login(String cred, String pass){
+    public int Login(String cred, String pass){
         File f = new File(path + "UtentiRegistrati.dati.csv");
         String s;
         String[] s_Split; 
@@ -51,16 +51,18 @@ public class Utenti {
                             indirizzo = s_Split[5];
                             email = s_Split[6];
                             password = s_Split[7];
+                            return 0;
                         }
                     }
                 }
             }
             if(eseguito == false){
-                System.out.println("Credenziali non valide");
+                return 1;
             }
         } catch (Exception e) {
             System.out.println(e);
         }
+        return 3;
     }
     private void Registrazione(){
         File f = new File(path + "UtentiRegistrati.dati.csv");
@@ -103,5 +105,31 @@ public class Utenti {
         }
                     
         
+    }
+    public String getInfo(String tipo){
+        if (tipo == "nome") {
+            return nome;
+        }
+        else if (tipo == "cognome") {
+            return cognome;
+        }        
+        else if (tipo == "codfis") {
+            return codfis;
+        }
+        else if (tipo == "username") {
+            return username;
+        }
+        else if (tipo == "indirizzo") {
+            return indirizzo;
+        }
+        else if (tipo == "email") {
+            return email;
+        }
+        else if(tipo == "password") {
+            return password;
+        }
+        else{
+            return 0;
+        }
     }
 }
