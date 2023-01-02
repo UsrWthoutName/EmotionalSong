@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.example.emotionalsongs","l":"CreaModificaPlaylist"},{"p":"com.example.emotionalsongs","l":"EmotionalSongs"},{"p":"com.example.emotionalsongs","l":"Emozioni"},{"p":"com.example.emotionalsongs","l":"HelloController"},{"p":"com.example.emotionalsongs","l":"Utenti"}];updateSearchResults();
