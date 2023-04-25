@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd39c598-ca4f-4056-ab2c-e0cce3e94744" name="Changes" comment="a" />
+    <list default="true" id="bd39c598-ca4f-4056-ab2c-e0cce3e94744" name="Changes" comment="a">
+      <change afterPath="$PROJECT_DIR$/.idea/EmotionalSong.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EmotionalSongs_A/src/EmotionalSongs/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/EmotionalSongs_A/src/EmotionalSongs/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EmotionalSongs_A/src/EmotionalSongs/target/maven-status/maven-compiler-plugin/compile/default-cli/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/EmotionalSongs_A/src/EmotionalSongs/target/maven-status/maven-compiler-plugin/compile/default-cli/inputFiles.lst" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,7 +33,7 @@
     </option>
   </component>
   <component name="ProjectId" id="2OMZCvJA74PI8ZR5PuKhotGeNmh" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -35,7 +42,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
@@ -47,7 +56,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "advanced.settings",
+    "settings.editor.selected.configurable": "terminal",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -90,6 +99,9 @@
       <workItem from="1681373104199" duration="2790000" />
       <workItem from="1681378908161" duration="191000" />
       <workItem from="1681379179697" duration="600000" />
+      <workItem from="1682321627035" duration="17000" />
+      <workItem from="1682321708075" duration="889000" />
+      <workItem from="1682322611194" duration="75000" />
     </task>
     <task id="LOCAL-00001" summary="mhanz">
       <created>1681373204383</created>
@@ -129,5 +141,9 @@
     <MESSAGE value="mhanz" />
     <MESSAGE value="a" />
     <option name="LAST_COMMIT_MESSAGE" value="a" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
