@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd39c598-ca4f-4056-ab2c-e0cce3e94744" name="Changes" comment="a">
-      <change afterPath="$PROJECT_DIR$/.idea/EmotionalSong.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EmotionalSongs_B/src/EmotionalSongs/src/main/resources/com/example/emotionalsongs/Icons/search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EmotionalSongs_B/src/EmotionalSongs/src/main/resources/com/example/emotionalsongs/a.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EmotionalSongs_B/src/EmotionalSongs/src/main/resources/com/example/emotionalsongs/prova1.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EmotionalSongs_A/src/EmotionalSongs/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/EmotionalSongs_A/src/EmotionalSongs/target/classes/module-info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EmotionalSongs_A/src/EmotionalSongs/target/maven-status/maven-compiler-plugin/compile/default-cli/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/EmotionalSongs_A/src/EmotionalSongs/target/maven-status/maven-compiler-plugin/compile/default-cli/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EmotionalSongs_B/src/EmotionalSongs/src/main/java/com/example/emotionalsongs/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/EmotionalSongs_B/src/EmotionalSongs/src/main/java/com/example/emotionalsongs/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EmotionalSongs_B/src/EmotionalSongs/src/main/resources/com/example/emotionalsongs/asdasddsaasd.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,26 +40,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "terminal",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="EmotionalSongs [compiler:compile]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
       <MavenSettings>
@@ -102,6 +102,8 @@
       <workItem from="1682321627035" duration="17000" />
       <workItem from="1682321708075" duration="889000" />
       <workItem from="1682322611194" duration="75000" />
+      <workItem from="1682430584474" duration="18000" />
+      <workItem from="1682440974491" duration="5000" />
     </task>
     <task id="LOCAL-00001" summary="mhanz">
       <created>1681373204383</created>
