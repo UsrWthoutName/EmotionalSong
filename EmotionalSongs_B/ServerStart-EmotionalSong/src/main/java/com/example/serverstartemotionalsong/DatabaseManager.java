@@ -7,6 +7,51 @@ import java.sql.*;
 
 public class  DatabaseManager {
 
+    public static void createTable2(String url, String user, String password, String query) {
+        try {
+            // Connessione al database
+            Connection conn = DriverManager.getConnection(url, user, password);
+            // Creazione della tabella
+            Statement statement = conn.createStatement();
+            statement.executeUpdate(query);
+            statement.close();
+            // Chiude la connessione al database
+            conn.close();
+            System.out.println("Tabella creata con successo!");
+        } catch (SQLException e) {
+            System.err.println("Errore durante la creazione della tabella:");
+            e.printStackTrace();
+        }
+    }
+
+
+
+    public static void createDatabase2(String url, String user, String password, String databaseName) {
+        try {
+            // Registra il driver JDBC per PostgreSQL
+            Class.forName("org.postgresql.Driver");
+
+            // Connessione al database
+            Connection conn = DriverManager.getConnection(url, user, password);
+
+            // Creazione del database
+            String createDBQuery = "CREATE DATABASE " + databaseName;
+            Statement statement = conn.createStatement();
+            statement.executeUpdate(createDBQuery);
+            statement.close();
+
+            // Chiude la connessione al database
+            conn.close();
+
+            System.out.println("Database creato con successo!");
+        } catch (ClassNotFoundException e) {
+            System.err.println("Driver JDBC non trovato. Assicurati di avere il driver PostgreSQL nel tuo classpath.");
+            e.printStackTrace();
+        } catch (SQLException e) {
+            System.err.println("Errore durante la creazione del database:");
+            e.printStackTrace();
+        }}
+
     public static void createDatabase(String url, String user, String password, String dbName) {
         try {
             // Connessione al database
@@ -54,6 +99,27 @@ public class  DatabaseManager {
         }
     }
 
+    public static boolean CheckDatabase(String url, String user, String password, String dbName ) {
+        try {
+            // Connessione al database
+            Connection connection = DriverManager.getConnection(url, user, password);
+            // Query per verificare se il database esiste già
+            String checkDbQuery = "SELECT datname FROM pg_catalog.pg_database WHERE datname = '" + dbName + "';";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(checkDbQuery);
+            // Verifica se il database è già presente
+            if (resultSet.next()) {
+                System.out.println("Il database " + dbName + " esiste già.");
+                return true;
+            }
+        } catch (SQLException e) {
+            System.out.println("Errore durante la connessione al database: " + e.getMessage());
+        }
+        return false;
+    }
+
+
+
     public static boolean CheckTable(String url, String user, String password, String tableName){
         try {// Connessione al database
             Connection connection = DriverManager.getConnection(url, user, password);
@@ -63,7 +129,7 @@ public class  DatabaseManager {
             ResultSet resultSet = statement.executeQuery(checkTableQuery);
             // Verifica se la tabella è già presente
             if (resultSet.next()) {
-               return true;
+                return true;
             }
         } catch (SQLException e) {
             System.out.println("Errore durante la connessione al database: " + e.getMessage());
@@ -75,7 +141,7 @@ public class  DatabaseManager {
     //CARICAMENTO TABELLA CANZONI
     public static void LoadTable(String url, String user, String password) {
         try {
-            BufferedReader bw = new BufferedReader(new FileReader("C:\\Users\\gabry\\Desktop\\ServerStart-EmotionalSong\\src\\main\\java\\com\\example\\serverstartemotionalsong\\canzoni.txt"));
+            BufferedReader bw = new BufferedReader(new FileReader("C:\\Users\\gabry\\EmotionalSong\\EmotionalSongs_B\\ServerStart-EmotionalSong\\src\\main\\java\\com\\example\\serverstartemotionalsong\\canzoni.txt"));
             String line;
             int i=0;
             int perc = 0;
@@ -88,8 +154,6 @@ public class  DatabaseManager {
                 String id = strpart[1];
                 String canzone = strpart[2];
                 String artista = strpart[3];
-
-
                 String query = "INSERT INTO canzoni VALUES('"+id+"', '"+canzone+"', '"+artista+"', "+anno+")";
                 stm.executeUpdate(query);
                 i++;
