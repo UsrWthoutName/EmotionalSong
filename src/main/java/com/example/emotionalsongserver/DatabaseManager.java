@@ -108,7 +108,7 @@ public class  DatabaseManager extends HelloController{
 
 
         try {
-            BufferedReader bw = new BufferedReader(new FileReader("C:\\Users\\gabry\\Desktop\\EmotionalSong\\src\\main\\java\\com\\example\\emotionalsongserver\\canzoni.txt"));
+            BufferedReader bw = new BufferedReader(new FileReader("canzoni.txt"));
             String line;
             int i=0;
             int perc = 0;

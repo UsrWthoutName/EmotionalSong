@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9aca4913-0b6b-4f3d-bfcf-591d23812848" name="Changes" comment="1">
+    <list default="true" id="9aca4913-0b6b-4f3d-bfcf-591d23812848" name="Changes" comment="sti merda di thread comunicano">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/HelloController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/HelloController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/HelloController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/DatabaseManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,8 +55,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\gabry\Desktop\EmotionalSong\src\main\java\com\example\emotionalsongserver" />
       <recent name="C:\Users\gabry\Desktop\EmotionalSong" />
+      <recent name="C:\Users\gabry\Desktop\EmotionalSong\src\main\java\com\example\emotionalsongserver" />
     </key>
   </component>
   <component name="RunManager" selected="Application.com.example.emotionalsongserver.HelloApplication">
@@ -125,7 +123,7 @@
       <workItem from="1691317505661" duration="4000" />
       <workItem from="1691317525080" duration="3000" />
       <workItem from="1691318238176" duration="22000" />
-      <workItem from="1691318283835" duration="3284000" />
+      <workItem from="1691318283835" duration="4344000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -143,7 +141,23 @@
       <option name="project" value="LOCAL" />
       <updated>1691320921505</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="1">
+      <option name="closed" value="true" />
+      <created>1691322140024</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1691322140024</updated>
+    </task>
+    <task id="LOCAL-00004" summary="sti merda di thread comunicano">
+      <option name="closed" value="true" />
+      <created>1691322181306</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1691322181306</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +166,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="sti merda di thread comunicano" />
+    <option name="LAST_COMMIT_MESSAGE" value="sti merda di thread comunicano" />
   </component>
 </project>
