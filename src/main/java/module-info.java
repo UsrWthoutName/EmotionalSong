@@ -1,10 +1,9 @@
-module com.example.serverstartemotionalsong {
+module com.example.emotionalsongserver {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
-    requires json.simple;
 
 
-    opens com.example.serverstartemotionalsong to javafx.fxml;
-    exports com.example.serverstartemotionalsong;
+    opens com.example.emotionalsongserver to javafx.fxml;
+    exports com.example.emotionalsongserver;
 }

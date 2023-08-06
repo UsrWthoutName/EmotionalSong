@@ -72,7 +72,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.serverstartemotionalsong/com.example.serverstartemotionalsong.HelloApplication
+                                com.example.serverstartemotionalsong/com.example.oldclasses.HelloApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
