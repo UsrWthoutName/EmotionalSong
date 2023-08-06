@@ -83,6 +83,7 @@ public class HelloController implements Initializable{
                         DatabaseManager.LoadTable(urlKK, usr, pass, LogLabel);
                         return null;}};
                 Thread thread = new Thread(task);
+
                 thread.start();
 
             } else {
