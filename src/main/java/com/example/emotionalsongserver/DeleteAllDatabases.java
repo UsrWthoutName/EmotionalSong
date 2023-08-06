@@ -4,7 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+/** 
+ * The class DeleteAllDatabase is an utility class which provide to delete all databases in a PostGreSQL server,
+ * except the template database
+**/
 public class DeleteAllDatabases {
 
     public static void main(String[] args) {
