@@ -6,10 +6,16 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.OutputStream;
-
+/**
+The class ConsoleToLabelJavaFX redirect the console Output on an existing Label
+**/
 public class ConsoleToLabelJavaFX extends Application {
     private Label logLabel;
+    /** 
+    the start method contains the main entry point for the JavaFX application
 
+    @param primaryStage contains the first window scene where is set the application
+    **/
     @Override
     public void start(Stage primaryStage) {
 
@@ -29,7 +35,16 @@ public class ConsoleToLabelJavaFX extends Application {
     }
 
     // Classe personalizzata che estende OutputStream
+    /**
+    CustomOutputStream is a custom class that extends OutputStream for redirecting the console
+    output to the Label
+    **/
     private class CustomOutputStream extends OutputStream {
+        /** 
+        Write is a method that write an int value to the output stream
+
+        @param b is the int value which has to be written
+        **/
         @Override
         public void write(int b) {
             // Aggiorna il testo della Label esistente
