@@ -22,9 +22,22 @@ import java.sql.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-
+/**
+ * The DatabaseManager class provides methods for managing a database, 
+ * creating tables and databases, and loading data into the database.
+ * It extends the HelloController class.
+ **/
 public class  DatabaseManager extends HelloController{
 
+    /** 
+    * CreateTable method create a table in the database specified by an url, an username, a password 
+    * using the given query
+    * 
+    * @param url is the url of the database
+    * @param user is the username for the database connection
+    * @param password is the password for the database connection
+    * @param query is the SQL query which create the table.
+    **/
     public static void createTable(String url, String user, String password, String query) {
         try {
             // Connessione al database
@@ -41,6 +54,14 @@ public class  DatabaseManager extends HelloController{
             e.printStackTrace();
         }
     }
+    /** 
+    * the method createDatabase creates a new database with the specified name in the given database server.
+    * @param url contains the URL of the database server.
+    * @param user contains the username for the database connection.
+    * @param password contains the password for the database connection.
+    * @param databaseName contains the name of the new database to create.
+    */
+    **/
     public static void createDatabase(String url, String user, String password, String databaseName) {
         try {
             // Registra il driver JDBC per PostgreSQL
@@ -66,6 +87,16 @@ public class  DatabaseManager extends HelloController{
             System.err.println("Errore durante la creazione del database:");
             e.printStackTrace();
         }}
+    /** 
+    * Check if a database with the specified name exists in the given database server
+    * 
+     * @param url     The URL of the database server.
+     * @param user    The username for the database connection.
+     * @param password The password for the database connection.
+     * @param dbName  The name of the database to check.
+     * @return true if the database exists; otherwise, false.
+    **/
+    
     public static boolean CheckDatabase(String url, String user, String password, String dbName ) {
         try {
             // Connessione al database
@@ -84,7 +115,6 @@ public class  DatabaseManager extends HelloController{
         }
         return false;
     }
-
     private static void open() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(DatabaseManager.class.getResource("progressbar.fxml"));
@@ -100,7 +130,18 @@ public class  DatabaseManager extends HelloController{
             e.printStackTrace();
         }
     }
-
+    /** 
+     * the method LoadTable loads data from a file into a table in the database.
+     *
+     * @param url contains the URL of the database.
+     * @param user contains the username for the database connection.
+     * @param password The password for the database connection.
+     * @param l is the label to display the progress of data loading.
+     * @param url2 contains URL of the server where the data is loaded from.
+     * @param ip contains the IP address of the server.
+     * @param port contains the port number of the server.
+     * @param progress contains the progress bar to show the loading progress.
+     */**/
     public static void LoadTable(String url, String user, String password, Label l,String url2,String ip,String port,ProgressBar progress) {
         String s = Thread.currentThread().getName();
         System.out.println(s);
