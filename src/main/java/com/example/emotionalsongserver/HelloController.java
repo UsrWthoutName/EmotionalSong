@@ -56,21 +56,18 @@ public class HelloController implements Initializable{
         String url = "jdbc:postgresql://" + GetJdbcUrl.getText() + "/";
         String usr = GetPostgresUsername.getText();
         String pass = GetPostgresPassword.getText();
-        String dbname = "db1";
+        String dbname = "db9";
         boolean db = DatabaseManager.CheckDatabase(url, usr, pass, dbname);
         if ((ipAddress.length() == 0) || (PortNumber.length() == 0) || (url.length() == 0) || (usr.length() == 0) || (pass.length() == 0)) {
             LogLabel.setText("error");
         } else {
             if (CBsave.isSelected()){
                 FileWriter fw = new FileWriter("init.txt");
-
                 String info = ipAddress+"\n"+PortNumber+"\n"+GetJdbcUrl.getText()+"\n"+usr+"\n"+pass;
                 fw.write(info);
                 fw.close();
             }
             if (!db) {
-
-
                 DatabaseManager.createDatabase(url, usr, pass, dbname);
                 DatabaseManager.createTable(url + dbname, usr, pass, queryCanzoni);
                 DatabaseManager.createTable(url + dbname, usr, pass, queryUtenti);
@@ -80,28 +77,21 @@ public class HelloController implements Initializable{
                 Task<Void> task = new Task<Void>() {
                     @Override
                     protected Void call() throws Exception {
-                        DatabaseManager.LoadTable(urlKK, usr, pass, LogLabel);
+                        DatabaseManager.LoadTable(urlKK, usr, pass, LogLabel,url,ipAddress,PortNumber,progress);
                         return null;}};
                 Thread thread = new Thread(task);
-
                 thread.start();
-
             } else {
                 ServerManager.StopServer();
                 ServerManager.executor(ipAddress, Integer.parseInt(PortNumber), url, usr, pass);
                 LogLabel.setText("server online on ip address: " + ipAddress + " and port:" + PortNumber);
             }
-
         }
     }
-
     public void StopServer(){
         ServerManager.StopServer();
         LogLabel.setText("server offline");
-        progress.setVisible(false);
     }
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try{

@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Stop;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -100,13 +101,9 @@ public class  DatabaseManager extends HelloController{
         }
     }
 
-    public static void LoadTable(String url, String user, String password, Label l) {
-
-
+    public static void LoadTable(String url, String user, String password, Label l,String url2,String ip,String port,ProgressBar progress) {
         String s = Thread.currentThread().getName();
         System.out.println(s);
-
-
         try {
             BufferedReader bw = new BufferedReader(new FileReader("canzoni.txt"));
             String line;
@@ -115,6 +112,7 @@ public class  DatabaseManager extends HelloController{
             Connection conn = DriverManager.getConnection(url, user, password);
             Statement stm = conn.createStatement();
             System.out.println(perc+"% completato");
+            progress.setVisible(true);
             while ((line = bw.readLine())!=null){
                 String[] strpart = line.split("<SEP>");
                 String anno  = strpart[0];
@@ -132,11 +130,18 @@ public class  DatabaseManager extends HelloController{
                     Platform.runLater(() ->{
                         l.setText(pprint+"% completato");
                     });
-
                 }
             }
-            System.out.println("Inserimento Completato");
             conn.close();
+            Platform.runLater(() ->{
+                Thread.currentThread().interrupt();
+                ServerManager.StopServer();
+                ServerManager.executor(ip, Integer.parseInt(port),url2,user,password);
+                l.setText("server online on ip address: " + ip + " and port:" + port);
+                progress.setVisible(false);
+            });
+
+
         }catch (FileNotFoundException e){
             System.err.println("File non trovato");
         }catch (Exception e){
