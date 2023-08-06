@@ -22,6 +22,11 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
+/**
+ * The HelloController class is the controller for the main application view.
+ * It manages user interactions and server operations related to the application
+ */
 public class HelloController implements Initializable{
     private final TextArea outputTextArea = new TextArea();
     @FXML
@@ -50,6 +55,11 @@ public class HelloController implements Initializable{
     public String queryPlaylist="CREATE TABLE playlist(id SERIAL PRIMARY KEY,nome VARCHAR,possessore INT REFERENCES utentiregistrati(id))";
     public String queryEmozioni="CREATE TABLE emozioni(idplaylist int,idcanzone VARCHAR REFERENCES canzoni(id),Amazement int,Solemnity int,Tenderness int,Nostalgia int,Calmness int,Power int,Joy int,Tension int,Sadness int,Amazement_N VARCHAR,Solemnity_N VARCHAR,Tenderness_N VARCHAR,Nostalgia_N VARCHAR,Calmness_N VARCHAR,Power_N VARCHAR,Joy_N VARCHAR,Tension_N VARCHAR,Sadness_N VARCHAR,  PRIMARY KEY(idplaylist, idcanzone))";
 
+    /**
+     * The method StartSocketServer start the socket server and manages database operations based on user inputs.
+     *
+     * @throws IOException If an I/O error occurs.
+     */
     public void StartSocketServer() throws IOException {
         String ipAddress = GetIpAddress.getText();
         String PortNumber = GetPort.getText();
@@ -88,10 +98,18 @@ public class HelloController implements Initializable{
             }
         }
     }
+    /**
+     * The method stopServer stop the running socket server.
+     */
     public void StopServer(){
         ServerManager.StopServer();
         LogLabel.setText("server offline");
     }
+    /**
+     * The method initialize initialize the controller by reading previous settings from a file.
+     * @param url            contains the url location used to resolve relative paths for the root object.
+     * @param resourceBundle contains the resources used to localize the root object.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try{
