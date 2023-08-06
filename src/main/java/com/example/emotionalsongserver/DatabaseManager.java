@@ -127,9 +127,12 @@ public class  DatabaseManager extends HelloController{
                 if (i==5155){
                     i=0;
                     perc++;
+                    final int pprint = perc;
                     System.out.println(perc+"% completato");
+                    Platform.runLater(() ->{
+                        l.setText(pprint+"% completato");
+                    });
 
-                    //l.setText(perc+"% completato");
                 }
             }
             System.out.println("Inserimento Completato");

@@ -100,6 +100,7 @@ public class HelloController implements Initializable{
         progress.setVisible(false);
     }
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try{
