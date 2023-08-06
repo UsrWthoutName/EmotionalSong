@@ -6,11 +6,25 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.sql.*;
+
+/** 
+The ClientHandler class takes care about the connection between the client and the query to a PostGreSql database,
+adding the support of multithread
+
+**/
 public class ClientHandler implements Runnable {
     private Socket clientSocket;
     private String url;
     private String username;
     private String password;
+    /**
+    class ClientHandler construct a new ClientHandler object
+    @param clientSocker contains the client's socket used for the communication
+    @param url contains the URL of the PostGreSql database
+    @param username contains the username of the user
+    @param password contains the password of the user
+    @throws SQLException if there's an error during database connection
+    **/
     public ClientHandler(Socket clientSocket, String url, String username, String password) throws SQLException {
         this.clientSocket = clientSocket;
         this.url = url;
@@ -18,6 +32,10 @@ public class ClientHandler implements Runnable {
         this.password = password;
     }
     @Override
+    /**
+    the class run starts the client handling process on a separate thread.
+    this method will be executed when the thread is started 
+    **/
     public void run() {
         try {
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
