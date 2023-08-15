@@ -50,7 +50,7 @@ public class HelloController implements Initializable{
     @FXML
     public CheckBox CBsave;
 
-    public String queryUtenti="CREATE TABLE utentiregistrati(id SERIAL PRIMARY KEY,nome VARCHAR,cognome VARCHAR,datanascita DATE,cfiscale VARCHAR(16),password VARCHAR, username VARCHAR, email VARCHAR)";
+    public String queryUtenti="CREATE TABLE utentiregistrati(id SERIAL PRIMARY KEY,nome VARCHAR,cognome VARCHAR,datanascita DATE,cfiscale VARCHAR(16),password VARCHAR, username VARCHAR, email VARCHAR, indirizzo VARCHAR)";
     public String queryCanzoni="CREATE TABLE canzoni(id VARCHAR PRIMARY KEY,titolo VARCHAR,autore VARCHAR,anno INT)";
     public String queryPlaylist="CREATE TABLE playlist(id SERIAL PRIMARY KEY,nome VARCHAR,possessore INT REFERENCES utentiregistrati(id))";
     public String queryEmozioni="CREATE TABLE emozioni(idplaylist int,idcanzone VARCHAR REFERENCES canzoni(id),Amazement int,Solemnity int,Tenderness int,Nostalgia int,Calmness int,Power int,Joy int,Tension int,Sadness int,Amazement_N VARCHAR,Solemnity_N VARCHAR,Tenderness_N VARCHAR,Nostalgia_N VARCHAR,Calmness_N VARCHAR,Power_N VARCHAR,Joy_N VARCHAR,Tension_N VARCHAR,Sadness_N VARCHAR,  PRIMARY KEY(idplaylist, idcanzone))";

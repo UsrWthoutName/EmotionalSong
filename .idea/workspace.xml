@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9aca4913-0b6b-4f3d-bfcf-591d23812848" name="Changes" comment="sti merda di thread comunicano">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/DatabaseManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/DatabaseManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/HelloController.class" afterDir="false" />
-    </list>
+    <list default="true" id="9aca4913-0b6b-4f3d-bfcf-591d23812848" name="Changes" comment="query utenti aggiunti email, username" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,7 +122,7 @@
       <workItem from="1691317525080" duration="3000" />
       <workItem from="1691318238176" duration="22000" />
       <workItem from="1691318283835" duration="4344000" />
-      <workItem from="1692115418482" duration="95000" />
+      <workItem from="1692115418482" duration="168000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -161,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691322181306</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="query utenti aggiunti email, username">
+      <option name="closed" value="true" />
+      <created>1692115571886</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1692115571886</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +174,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="1" />
     <MESSAGE value="sti merda di thread comunicano" />
-    <option name="LAST_COMMIT_MESSAGE" value="sti merda di thread comunicano" />
+    <MESSAGE value="query utenti aggiunti email, username" />
+    <option name="LAST_COMMIT_MESSAGE" value="query utenti aggiunti email, username" />
   </component>
 </project>
