@@ -49,11 +49,17 @@ public class HelloController implements Initializable{
     public ProgressBar progress;
     @FXML
     public CheckBox CBsave;
+    @FXML
+    public TextField dbName;
+
+
 
     public String queryUtenti="CREATE TABLE utentiregistrati(id SERIAL PRIMARY KEY,nome VARCHAR,cognome VARCHAR,datanascita DATE,cfiscale VARCHAR(16),password VARCHAR, username VARCHAR, email VARCHAR, indirizzo VARCHAR)";
     public String queryCanzoni="CREATE TABLE canzoni(id VARCHAR PRIMARY KEY,titolo VARCHAR,autore VARCHAR,anno INT)";
     public String queryPlaylist="CREATE TABLE playlist(id SERIAL PRIMARY KEY,nome VARCHAR,possessore INT REFERENCES utentiregistrati(id))";
     public String queryEmozioni="CREATE TABLE emozioni(idplaylist int,idcanzone VARCHAR REFERENCES canzoni(id),Amazement int,Solemnity int,Tenderness int,Nostalgia int,Calmness int,Power int,Joy int,Tension int,Sadness int,Amazement_N VARCHAR,Solemnity_N VARCHAR,Tenderness_N VARCHAR,Nostalgia_N VARCHAR,Calmness_N VARCHAR,Power_N VARCHAR,Joy_N VARCHAR,Tension_N VARCHAR,Sadness_N VARCHAR,  PRIMARY KEY(idplaylist, idcanzone))";
+
+
 
     /**
      * The method StartSocketServer start the socket server and manages database operations based on user inputs.
@@ -66,14 +72,15 @@ public class HelloController implements Initializable{
         String url = "jdbc:postgresql://" + GetJdbcUrl.getText() + "/";
         String usr = GetPostgresUsername.getText();
         String pass = GetPostgresPassword.getText();
-        String dbname = "db9";
+        String dbname = dbName.getText();
         boolean db = DatabaseManager.CheckDatabase(url, usr, pass, dbname);
-        if ((ipAddress.length() == 0) || (PortNumber.length() == 0) || (url.length() == 0) || (usr.length() == 0) || (pass.length() == 0)) {
+        if ((ipAddress.length() == 0) || (PortNumber.length() == 0) || (url.length() == 19) || (usr.length() == 0) || (pass.length() == 0)) {
             LogLabel.setText("error");
-        } else {
+        }
+        else {
             if (CBsave.isSelected()){
                 FileWriter fw = new FileWriter("init.txt");
-                String info = ipAddress+"\n"+PortNumber+"\n"+GetJdbcUrl.getText()+"\n"+usr+"\n"+pass;
+                String info = ipAddress+"\n"+PortNumber+"\n"+GetJdbcUrl.getText()+"\n"+usr+"\n"+pass+"\n"+dbname;
                 fw.write(info);
                 fw.close();
             }
@@ -93,7 +100,7 @@ public class HelloController implements Initializable{
                 thread.start();
             } else {
                 ServerManager.StopServer();
-                ServerManager.executor(ipAddress, Integer.parseInt(PortNumber), url, usr, pass);
+                ServerManager.executor(ipAddress, Integer.parseInt(PortNumber), url+dbname, usr, pass);
                 LogLabel.setText("server online on ip address: " + ipAddress + " and port:" + PortNumber);
             }
         }
@@ -119,6 +126,7 @@ public class HelloController implements Initializable{
             GetJdbcUrl.setText(br.readLine());
             GetPostgresUsername.setText(br.readLine());
             GetPostgresPassword.setText(br.readLine());
+            dbName.setText(br.readLine());
 
         }catch (IOException e){}
     }

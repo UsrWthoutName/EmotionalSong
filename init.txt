@@ -1,5 +1,6 @@
 localhost
-6666
+5000
 localhost:5432
 postgres
-1a2b3c
+postgres
+databaseditest1

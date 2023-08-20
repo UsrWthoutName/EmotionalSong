@@ -60,7 +60,6 @@ public class  DatabaseManager extends HelloController{
     * @param user contains the username for the database connection.
     * @param password contains the password for the database connection.
     * @param databaseName contains the name of the new database to create.
-    */
     **/
     public static void createDatabase(String url, String user, String password, String databaseName) {
         try {
@@ -141,7 +140,7 @@ public class  DatabaseManager extends HelloController{
      * @param ip contains the IP address of the server.
      * @param port contains the port number of the server.
      * @param progress contains the progress bar to show the loading progress.
-     */**/
+     **/
     public static void LoadTable(String url, String user, String password, Label l,String url2,String ip,String port,ProgressBar progress) {
         String s = Thread.currentThread().getName();
         System.out.println(s);
@@ -160,7 +159,7 @@ public class  DatabaseManager extends HelloController{
                 String id = strpart[1];
                 String canzone = strpart[2];
                 String artista = strpart[3];
-                String query = "INSERT INTO canzoni VALUES('"+id+"', '"+canzone+"', '"+artista+"', "+anno+")";
+                String query = "INSERT INTO canzoni VALUES('"+id+"', '"+artista+"', '"+canzone+"', "+anno+")";
                 stm.executeUpdate(query);
                 i++;
                 if (i==5155){

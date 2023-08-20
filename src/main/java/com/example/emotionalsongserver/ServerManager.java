@@ -28,7 +28,7 @@ public class ServerManager {
      * This method sets up an executor and runs the server in a separate thread to accept client connections.
      *
      * @param ipAddress The IP address on which the server should listen.
-     * @param portNumber The port number to bind the server.
+     * @param PortNumber The port number to bind the server.
      * @param url The URL of the database to establish a connection.
      * @param usr The username for the database connection.
      * @param pass The password for the database connection.
@@ -58,7 +58,12 @@ public class ServerManager {
                 Socket clientSocket = serverSocket.accept();
                 System.out.println("Nuova connessione accettata da: " + clientSocket.getInetAddress());
                 ClientHandler clientHandler = new ClientHandler(clientSocket,url,usr,pass);
-                executor.submit(clientHandler);}} catch (IOException | SQLException e) {e.printStackTrace();}}
+                executor.submit(clientHandler);
+            }
+        }catch (IOException | SQLException e) {e.printStackTrace();}
+    }
+
+
      /**
      * The StopServer method stops the server and shuts down the executor, closing all client connections.
      * This method should be called when you want to stop the server and release its resources.

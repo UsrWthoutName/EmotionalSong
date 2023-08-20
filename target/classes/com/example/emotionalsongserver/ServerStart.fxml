@@ -12,11 +12,12 @@
             <Image url="@../../../../../../../../../Users/edoar/Desktop/adadsadsad.gif" />
          </image>
       </ImageView>
-      <TextField fx:id="GetIpAddress" layoutX="147.0" layoutY="144.0" prefHeight="36.0" prefWidth="212.0" promptText="ip address" />
-      <TextField fx:id="GetPort" layoutX="147.0" layoutY="205.0" prefHeight="36.0" prefWidth="212.0" promptText="port number" />
-      <TextField fx:id="GetJdbcUrl" layoutX="147.0" layoutY="266.0" prefHeight="36.0" prefWidth="212.0" promptText="ip e porta postgres" />
-      <TextField fx:id="GetPostgresUsername" layoutX="147.0" layoutY="327.0" prefHeight="36.0" prefWidth="212.0" promptText="username" />
-      <TextField fx:id="GetPostgresPassword" layoutX="147.0" layoutY="385.0" prefHeight="36.0" prefWidth="212.0" promptText="password" />
+      <TextField fx:id="GetIpAddress" layoutX="147.0" layoutY="144.0" prefHeight="36.0" prefWidth="120.0" promptText="ip address" />
+      <TextField fx:id="GetPort" layoutX="276.0" layoutY="144.0" prefHeight="36.0" prefWidth="82.0" promptText="port number" />
+      <TextField fx:id="GetJdbcUrl" layoutX="147.0" layoutY="205.0" prefHeight="36.0" prefWidth="212.0" promptText="ip e porta postgres" />
+      <TextField fx:id="GetPostgresUsername" layoutX="147.0" layoutY="267.0" prefHeight="36.0" prefWidth="212.0" promptText="username" />
+      <TextField fx:id="GetPostgresPassword" layoutX="147.0" layoutY="325.0" prefHeight="36.0" prefWidth="212.0" promptText="password" />
+      <TextField fx:id="dbName" layoutX="147.0" layoutY="383.0" prefHeight="36.0" prefWidth="212.0" promptText="nome database" />
       <Button fx:id="StartButton" layoutX="393.0" layoutY="144.0" mnemonicParsing="false" onAction="#StartSocketServer" prefHeight="36.0" prefWidth="101.0" text="START" />
       <Label fx:id="LogLabel" alignment="CENTER" layoutX="147.0" layoutY="450.0" prefHeight="36.0" prefWidth="347.0" style="-fx-background-color: #D7D5D5;" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
          <font>
@@ -25,5 +26,6 @@
       <Button layoutX="393.0" layoutY="205.0" mnemonicParsing="false" onAction="#StopServer" prefHeight="36.0" prefWidth="101.0" text="STOP" />
       <ProgressBar fx:id="progress" layoutX="147.0" layoutY="486.0" prefHeight="18.0" prefWidth="347.0" visible="false" />
       <CheckBox fx:id="CBsave" layoutX="393.0" layoutY="276.0" mnemonicParsing="false" text="Salva Informazioni" />
+
    </children>
 </AnchorPane>
