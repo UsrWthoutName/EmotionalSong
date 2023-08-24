@@ -64,6 +64,7 @@ public class ClientHandler implements Runnable {
                                 out.println("-1");  //no corrispondenza credenziale-password
                             }
                             conn.close();
+                            System.out.println("login terminato");
                         }catch (Exception e){}
                     break;
                 case "R":   //REGISTRAZIONE
@@ -94,13 +95,52 @@ public class ClientHandler implements Runnable {
                         }catch (Exception e){}
                     break;
                 case "C":   //CANZONE
+                        out.println("C");
+                        s = in.readLine();
+                        try {
+                            Connection connection = DriverManager.getConnection(url, username, password);
+                            Statement statement = connection.createStatement();
+                            q = "SELECT AVG(amazement) as amAVG, AVG(solemnity) as solAVG, AVG(tenderness) as tendAVG, AVG(nostalgia) as nosAVG, AVG(calmness) as calAVG, AVG(power) as powAVG, AVG(joy) as joyAVG, AVG(tension) as tensAVG, AVG(sadness) as sadAVG FROM emozioni WHERE idcanzone = '"+s+"' AND valutata = TRUE";
+                            ResultSet res = statement.executeQuery(q);
+                            res.next();
+                            //AMAZEMENT~SOLEMNITY~TENDERNESS~NOSTALGIA~CALMNESS~POWER~JOY~TENSION~SADNESS
+                            String srvres = res.getString("amAVG")+"~"+res.getString("solAVG")+"~"+res.getString("tendAVG")+"~"+res.getString("nosAVG")+"~"+res.getString("calAVG")+"~"+res.getString("powAVG")+"~"+res.getString("joyAVG")+"~"+res.getString("tensAVG")+"~"+ res.getString("sadAVG");
+                            System.out.println(srvres);
+                            out.println(srvres);
+
+                            int c = 0;
+                            String[] em = {"amazement_n","solemnity_n", "tenderness_n", "nostalgia_n", "calmness_n", "power_n", "joy_n", "tension_n", "sadness_n" };
+
+                            srvres = "";
+                            while (c<9){
+                                q = "SELECT "+em[c]+" FROM emozioni WHERE idcanzone = '"+s+"' AND "+em[c]+" IS NOT NULL";
+                                res = statement.executeQuery(q);
+                                while (res.next()){
+                                    srvres = srvres+em[c]+"~"+res.getString(em[c])+"~";
+                                }
+                                c++;
+                            }
+                            if (srvres.equals("")){
+                                out.println("-1");
+
+                            }
+                            else{
+                                srvres = srvres.substring(0, srvres.length()-1);
+                                System.out.println(srvres);
+                                //EMOZIONE_N~RECENSIONE~...
+                                out.println(srvres);
+                            }
+
+
+                        }catch (Exception e){
+                            System.err.println(e);
+                        }
                     break;
                 case "S":   //RICERCA CANZONI
                         out.println("C");
-
                         s = in.readLine();
+                        s = s.replace("'", "''");
                         try {
-                            System.out.println("asdasd");
                             Connection conn = DriverManager.getConnection(url, username, password);
                             Statement statement = conn.createStatement();
                             q = "SELECT * FROM canzoni WHERE titolo = '"+s+"' OR autore = '"+s+"'";
@@ -159,6 +199,8 @@ public class ClientHandler implements Runnable {
                                     srvresponse = srvresponse+idPlaylist+"~"+arrNm.get(i)+"~"+size+"~";
                                     i++;
                                 }
+                                srvresponse =  srvresponse.substring(0, srvresponse.length()-1);
+                                out.println(srvresponse);
 
                             }
                             conn.close();
