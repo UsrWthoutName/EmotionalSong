@@ -86,10 +86,12 @@ public class ClientHandler implements Runnable {
                                 q="INSERT INTO utentiregistrati (nome, cognome, datanascita, cfiscale, password, username, email, indirizzo) VALUES('"+cont[0]+"', '"+cont[1]+"', '"+cont[7]+"', '"+cont[5]+"', '"+cont[4]+"', '"+cont[3]+"', '"+cont[2]+"', '"+cont[6]+"')";
                                 System.out.println(q);
                                 statement.executeUpdate(q);
-                                q = "SELECT id FROM utentiregistrati WHERE username="+cont[3]+"";
+                                q = "SELECT id FROM utentiregistrati WHERE username='"+cont[3]+"'";
+                                System.out.println(q);
                                 res = statement.executeQuery(q);
+                                System.out.println("asdasdasd");
                                 res.next();
-                                out.println();
+                                out.println(res.getString("id"));
                             }
                             conn.close();
                         }catch (Exception e){}
@@ -167,16 +169,20 @@ public class ClientHandler implements Runnable {
                 case "P":   //PLAYLIST
                         out.println("C");
                         s = in.readLine();  //contiene ID utente
+
+
                         try {
                             Connection conn = DriverManager.getConnection(url, username, password);
                             Statement statement = conn.createStatement();
                             q="SELECT COUNT(id) FROM playlist WHERE possessore ='"+s+"'";   //NUMERO PLAYLIST CREATE DA UTENTE
+                            System.out.println(q);
                             ResultSet res = statement.executeQuery(q);
                             res.next();
                             String numEl = res.getString("COUNT");
                             out.println(numEl);
                             if (!numEl.equals("0")){
                                 q="SELECT id, nome FROM playlist WHERE possessore = '"+s+"'";   //ELENCO PLAYLIST CREATE DA UTENTE
+                                System.out.println(q);
                                 res= statement.executeQuery(q);
                                 ArrayList<String> arrNm = new ArrayList<String>();
                                 ArrayList<String> arrId = new ArrayList<String>();

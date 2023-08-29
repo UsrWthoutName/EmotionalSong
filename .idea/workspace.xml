@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9aca4913-0b6b-4f3d-bfcf-591d23812848" name="Changes" comment="server di merda finito">
+    <list default="true" id="9aca4913-0b6b-4f3d-bfcf-591d23812848" name="Changes" comment="asfojpfaspojasfpjoasfjopafsopjasfpojopasdfjoapjsfpoajsf">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init.txt" beforeDir="false" afterPath="$PROJECT_DIR$/init.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/ClientHandler.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +180,9 @@
       <workItem from="1693260064722" duration="4050000" />
       <workItem from="1693315014304" duration="9216000" />
       <workItem from="1693326203138" duration="181000" />
-      <workItem from="1693338406691" duration="1519000" />
+      <workItem from="1693338406691" duration="2534000" />
+      <workItem from="1693342160731" duration="132000" />
+      <workItem from="1693342813094" duration="1011000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -254,7 +256,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693326245102</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="asfojpfaspojasfpjoasfjopafsopjasfpojopasdfjoapjsfpoajsf">
+      <option name="closed" value="true" />
+      <created>1693341432816</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1693341432816</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,6 +279,7 @@
     <MESSAGE value="asdunzi" />
     <MESSAGE value="aggiunta la merda che gestisce l'apertura delle canzoni" />
     <MESSAGE value="server di merda finito" />
-    <option name="LAST_COMMIT_MESSAGE" value="server di merda finito" />
+    <MESSAGE value="asfojpfaspojasfpjoasfjopafsopjasfpojopasdfjoapjsfpoajsf" />
+    <option name="LAST_COMMIT_MESSAGE" value="asfojpfaspojasfpjoasfjopafsopjasfpojopasdfjoapjsfpoajsf" />
   </component>
 </project>
