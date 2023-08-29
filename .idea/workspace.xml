@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9aca4913-0b6b-4f3d-bfcf-591d23812848" name="Changes" comment="asdunzi">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="9aca4913-0b6b-4f3d-bfcf-591d23812848" name="Changes" comment="aggiunta la merda che gestisce l'apertura delle canzoni">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init.txt" beforeDir="false" afterPath="$PROJECT_DIR$/init.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/ClientHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/HelloController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +62,9 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -171,7 +171,15 @@
       <workItem from="1692569210007" duration="2040000" />
       <workItem from="1692690615602" duration="7319000" />
       <workItem from="1692743027341" duration="7568000" />
-      <workItem from="1692867298168" duration="5496000" />
+      <workItem from="1692867298168" duration="6451000" />
+      <workItem from="1692916506972" duration="8121000" />
+      <workItem from="1693055976820" duration="1754000" />
+      <workItem from="1693084307361" duration="16000" />
+      <workItem from="1693123707411" duration="19416000" />
+      <workItem from="1693175074901" duration="12996000" />
+      <workItem from="1693254904524" duration="570000" />
+      <workItem from="1693260064722" duration="4050000" />
+      <workItem from="1693315014304" duration="9216000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -229,7 +237,15 @@
       <option name="project" value="LOCAL" />
       <updated>1692542172389</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="aggiunta la merda che gestisce l'apertura delle canzoni">
+      <option name="closed" value="true" />
+      <created>1692884406841</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1692884406841</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +258,7 @@
     <MESSAGE value="query utenti aggiunti email, username" />
     <MESSAGE value="query utenti aggiunti email, username. mi sono dimenticato l'indirizzo fisico mannaja a maronn" />
     <MESSAGE value="asdunzi" />
-    <option name="LAST_COMMIT_MESSAGE" value="asdunzi" />
+    <MESSAGE value="aggiunta la merda che gestisce l'apertura delle canzoni" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunta la merda che gestisce l'apertura delle canzoni" />
   </component>
 </project>
