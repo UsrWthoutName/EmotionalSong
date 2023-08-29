@@ -84,8 +84,9 @@ public class ClientHandler implements Runnable {
                             }
                             else {
                                 q="INSERT INTO utentiregistrati (nome, cognome, datanascita, cfiscale, password, username, email, indirizzo) VALUES('"+cont[0]+"', '"+cont[1]+"', '"+cont[7]+"', '"+cont[5]+"', '"+cont[4]+"', '"+cont[3]+"', '"+cont[2]+"', '"+cont[6]+"')";
+                                System.out.println(q);
                                 statement.executeUpdate(q);
-                                q = "SELECT id FROM utentiregistrati WHERE username='"+cont[3]+"'";
+                                q = "SELECT id FROM utentiregistrati WHERE username="+cont[3]+"";
                                 res = statement.executeQuery(q);
                                 res.next();
                                 out.println();

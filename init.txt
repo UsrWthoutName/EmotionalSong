@@ -3,4 +3,4 @@ localhost
 localhost:5432
 postgres
 postgres
-databaseditest1
+databaseditest3
