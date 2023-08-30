@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9aca4913-0b6b-4f3d-bfcf-591d23812848" name="Changes" comment="finchè la barca vaaaa tu non remareeee a meno che la tua meta non sia lampedusaaaaa">
+    <list default="true" id="9aca4913-0b6b-4f3d-bfcf-591d23812848" name="Changes" comment="asfojpfaspojasfpjoasfjopafsopjasfpojopasdfjoapjsfpoajsf">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/DatabaseManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/DatabaseManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/HelloApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/HelloController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/HelloController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/HelloController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/ServerStart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/ServerStart.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/ClientHandler.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +180,9 @@
       <workItem from="1693260064722" duration="4050000" />
       <workItem from="1693315014304" duration="9216000" />
       <workItem from="1693326203138" duration="181000" />
-      <workItem from="1693338406691" duration="1519000" />
+      <workItem from="1693338406691" duration="2534000" />
+      <workItem from="1693342160731" duration="132000" />
+      <workItem from="1693342813094" duration="1011000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -258,28 +256,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693326245102</updated>
     </task>
-    <task id="LOCAL-00010" summary="finchè la barca vaaaa tu non remareeee a meno che la tua meta non sia lampedusaaaaa">
-      <created>1693399951957</created>
+    <task id="LOCAL-00010" summary="asfojpfaspojasfpjoasfjopafsopjasfpojopasdfjoapjsfpoajsf">
+      <option name="closed" value="true" />
+      <created>1693341432816</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1693399951957</updated>
+      <updated>1693341432816</updated>
     </task>
-    <task id="LOCAL-00011" summary="finchè la barca vaaaa tu non remareeee a meno che la tua meta non sia lampedusaaaaa">
-      <created>1693399971394</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1693399971394</updated>
-    </task>
-    <task id="LOCAL-00012" summary="finchè la barca vaaaa tu non remareeee a meno che la tua meta non sia lampedusaaaaa">
-      <created>1693400714209</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1693400714209</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,7 +279,7 @@
     <MESSAGE value="asdunzi" />
     <MESSAGE value="aggiunta la merda che gestisce l'apertura delle canzoni" />
     <MESSAGE value="server di merda finito" />
-    <MESSAGE value="finchè la barca vaaaa tu non remareeee a meno che la tua meta non sia lampedusaaaaa" />
-    <option name="LAST_COMMIT_MESSAGE" value="finchè la barca vaaaa tu non remareeee a meno che la tua meta non sia lampedusaaaaa" />
+    <MESSAGE value="asfojpfaspojasfpjoasfjopafsopjasfpojopasdfjoapjsfpoajsf" />
+    <option name="LAST_COMMIT_MESSAGE" value="asfojpfaspojasfpjoasfjopafsopjasfpojopasdfjoapjsfpoajsf" />
   </component>
 </project>

@@ -280,6 +280,16 @@ public class ClientHandler implements Runnable {
                             }
                             q = "UPDATE emozioni SET valutata = true WHERE idplaylist="+idplaylist+" AND idcanzone = '"+idcanzone+"'";
                             statement.executeUpdate(q);
+                            String srvres = "";
+                            q = "SELECT nome FROM playlist WHERE id = "+idplaylist+"";
+                            ResultSet res = statement.executeQuery(q);
+                            res.next();
+                            srvres = srvres + res.getString("nome")+"~";
+                            q = "SELECT COUNT(*) FROM emozioni WHERE idplaylist = "+idplaylist+"";
+                            res = statement.executeQuery(q);
+                            res.next();
+                            srvres = srvres + res.getString("COUNT");
+                            out.println(srvres);
                         }
 
                     }catch (Exception e){
