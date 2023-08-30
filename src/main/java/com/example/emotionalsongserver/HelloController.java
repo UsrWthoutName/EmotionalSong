@@ -44,6 +44,8 @@ public class HelloController implements Initializable{
     @FXML
     public Button StartButton;
     @FXML
+    public Button StopButton;
+    @FXML
     public ImageView GifImg;
     @FXML
     public ProgressBar progress;
@@ -94,7 +96,7 @@ public class HelloController implements Initializable{
                 Task<Void> task = new Task<Void>() {
                     @Override
                     protected Void call() throws Exception {
-                        DatabaseManager.LoadTable(urlKK, usr, pass, LogLabel,url,ipAddress,PortNumber,progress);
+                        DatabaseManager.LoadTable(urlKK, usr, pass, LogLabel,url,ipAddress,PortNumber,progress,StopButton,StopButton);
                         return null;}};
                 Thread thread = new Thread(task);
                 thread.start();

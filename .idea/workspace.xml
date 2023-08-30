@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9aca4913-0b6b-4f3d-bfcf-591d23812848" name="Changes" comment="aggiunta la merda che gestisce l'apertura delle canzoni">
-      <change afterPath="$PROJECT_DIR$/out/artifacts/ServerStart_EmotionalSong_jar/ServerStart-EmotionalSong.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+    <list default="true" id="9aca4913-0b6b-4f3d-bfcf-591d23812848" name="Changes" comment="finchè la barca vaaaa tu non remareeee a meno che la tua meta non sia lampedusaaaaa">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init.txt" beforeDir="false" afterPath="$PROJECT_DIR$/init.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/DatabaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/emotionalsongserver/ServerStart.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/emotionalsongserver/ServerStart.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/ClientHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,7 +257,21 @@
       <option name="project" value="LOCAL" />
       <updated>1693326245102</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="finchè la barca vaaaa tu non remareeee a meno che la tua meta non sia lampedusaaaaa">
+      <created>1693399951957</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1693399951957</updated>
+    </task>
+    <task id="LOCAL-00011" summary="finchè la barca vaaaa tu non remareeee a meno che la tua meta non sia lampedusaaaaa">
+      <created>1693399971394</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1693399971394</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +286,7 @@
     <MESSAGE value="asdunzi" />
     <MESSAGE value="aggiunta la merda che gestisce l'apertura delle canzoni" />
     <MESSAGE value="server di merda finito" />
-    <option name="LAST_COMMIT_MESSAGE" value="server di merda finito" />
+    <MESSAGE value="finchè la barca vaaaa tu non remareeee a meno che la tua meta non sia lampedusaaaaa" />
+    <option name="LAST_COMMIT_MESSAGE" value="finchè la barca vaaaa tu non remareeee a meno che la tua meta non sia lampedusaaaaa" />
   </component>
 </project>

@@ -141,7 +141,7 @@ public class  DatabaseManager extends HelloController{
      * @param port contains the port number of the server.
      * @param progress contains the progress bar to show the loading progress.
      **/
-    public static void LoadTable(String url, String user, String password, Label l,String url2,String ip,String port,ProgressBar progress) {
+    public static void LoadTable(String url, String user, String password, Label l,String url2,String ip,String port,ProgressBar progress,Button StopButton,Button StartButton ) {
         String s = Thread.currentThread().getName();
         System.out.println(s);
         try {
@@ -153,6 +153,8 @@ public class  DatabaseManager extends HelloController{
             Statement stm = conn.createStatement();
             System.out.println(perc+"% completato");
             progress.setVisible(true);
+            StartButton.setDisable(true);
+            StopButton.setDisable(true);
             while ((line = bw.readLine())!=null){
                 String[] strpart = line.split("<SEP>");
                 String anno  = strpart[0];
@@ -178,6 +180,8 @@ public class  DatabaseManager extends HelloController{
                 ServerManager.StopServer();
                 ServerManager.executor(ip, Integer.parseInt(port),url2,user,password);
                 l.setText("server online on ip address: " + ip + " and port:" + port);
+                StartButton.setDisable(false);
+                StopButton.setDisable(false);
                 progress.setVisible(false);
             });
 
