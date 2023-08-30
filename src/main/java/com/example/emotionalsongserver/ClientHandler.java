@@ -1,5 +1,7 @@
 package com.example.emotionalsongserver;
 
+import javafx.scene.control.TableView;
+
 import java.io.*;
 import java.net.Socket;
 import java.sql.*;
@@ -98,15 +100,28 @@ public class ClientHandler implements Runnable {
                     break;
                 case "C":   //CANZONE
                         out.println("C");
-                        s = in.readLine();
+                        String userid = in.readLine();
                         try {
                             Connection connection = DriverManager.getConnection(url, username, password);
                             Statement statement = connection.createStatement();
-                            q = "SELECT AVG(amazement) as amAVG, AVG(solemnity) as solAVG, AVG(tenderness) as tendAVG, AVG(nostalgia) as nosAVG, AVG(calmness) as calAVG, AVG(power) as powAVG, AVG(joy) as joyAVG, AVG(tension) as tensAVG, AVG(sadness) as sadAVG FROM emozioni WHERE idcanzone = '"+s+"' AND valutata = TRUE";
+
+                            //parte 1 - richiesta playlist non valutate
+                            q = "SELECT DISTINCT id, nome FROM playlist WHERE possessore = "+userid+" AND id NOT IN (SELECT idplaylist FROM emozioni WHERE valutata = true)";
                             ResultSet res = statement.executeQuery(q);
+                            String srvres = "";
+                            while (res.next()){
+                                srvres = srvres+res.getString("id")+"~"+res.getString("nome")+"~";
+                            }
+                            srvres = srvres.substring(0, srvres.length()-1);
+                            out.println(srvres);
+                            //parte 2
+                            srvres = "";
+                            s = in.readLine();
+                            q = "SELECT AVG(amazement) as amAVG, AVG(solemnity) as solAVG, AVG(tenderness) as tendAVG, AVG(nostalgia) as nosAVG, AVG(calmness) as calAVG, AVG(power) as powAVG, AVG(joy) as joyAVG, AVG(tension) as tensAVG, AVG(sadness) as sadAVG FROM emozioni WHERE idcanzone = '"+s+"' AND valutata = TRUE";
+                            res = statement.executeQuery(q);
                             res.next();
                             //AMAZEMENT~SOLEMNITY~TENDERNESS~NOSTALGIA~CALMNESS~POWER~JOY~TENSION~SADNESS
-                            String srvres = res.getString("amAVG")+"~"+res.getString("solAVG")+"~"+res.getString("tendAVG")+"~"+res.getString("nosAVG")+"~"+res.getString("calAVG")+"~"+res.getString("powAVG")+"~"+res.getString("joyAVG")+"~"+res.getString("tensAVG")+"~"+ res.getString("sadAVG");
+                            srvres = res.getString("amAVG")+"~"+res.getString("solAVG")+"~"+res.getString("tendAVG")+"~"+res.getString("nosAVG")+"~"+res.getString("calAVG")+"~"+res.getString("powAVG")+"~"+res.getString("joyAVG")+"~"+res.getString("tensAVG")+"~"+ res.getString("sadAVG");
                             out.println(srvres);
 
                             int c = 0;
