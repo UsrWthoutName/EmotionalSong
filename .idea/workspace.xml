@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9aca4913-0b6b-4f3d-bfcf-591d23812848" name="Changes" comment="asfojpfaspojasfpjoasfjopafsopjasfpojopasdfjoapjsfpoajsf">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_08_2023_22_37__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_08_2023_22_37__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_08_2023_13_57__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_30_08_2023_13_57__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/init.txt" beforeDir="false" afterPath="$PROJECT_DIR$/init.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/emotionalsongserver/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/ClientHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/emotionalsongserver/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,6 +186,13 @@
       <workItem from="1693338406691" duration="2534000" />
       <workItem from="1693342160731" duration="132000" />
       <workItem from="1693342813094" duration="1011000" />
+      <workItem from="1693416789022" duration="18000" />
+      <workItem from="1693416904723" duration="692000" />
+      <workItem from="1693471221753" duration="4402000" />
+      <workItem from="1693558606521" duration="2208000" />
+      <workItem from="1693586577555" duration="617000" />
+      <workItem from="1693652768413" duration="9144000" />
+      <workItem from="1693670433939" duration="1734000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -275,7 +282,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693402813120</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="asfojpfaspojasfpjoasfjopafsopjasfpojopasdfjoapjsfpoajsf">
+      <option name="closed" value="true" />
+      <created>1693406674808</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1693406674808</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

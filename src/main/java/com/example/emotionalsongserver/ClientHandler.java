@@ -1,12 +1,10 @@
 package com.example.emotionalsongserver;
 
-import javafx.scene.control.TableView;
 
 import java.io.*;
 import java.net.Socket;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 /** 
 The ClientHandler class takes care about the connection between the client and the query to a PostGreSql database,
@@ -40,17 +38,15 @@ public class ClientHandler implements Runnable {
     public void run() {
         try {
             PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
-           // ObjectOutputStream objout = new ObjectOutputStream(clientSocket.getOutputStream());
             BufferedReader in =new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             String op = in.readLine();
-            //CLIENT INVIA UNO DEI SEGUENTI CODICI CHE IDENTIFICANO LA RICHIESTA
             String s;
             String[] cont;
             String q;
             switch (op){
-                case "L":   //LOGIN
-                        out.println("C");           //conferma ricezione comando
-                        s = in.readLine();          //riceve informazioni in formato CREDENZIALE~PASSWORD
+                case "L":
+                        out.println("C");
+                        s = in.readLine();
                         cont = s.split("~");
                         String cred = cont[0];
                         String pw = cont[1];
@@ -63,16 +59,15 @@ public class ClientHandler implements Runnable {
                                 out.println(res.getString("username")+"~"+res.getString("id"));
                             }
                             else {
-                                out.println("-1");  //no corrispondenza credenziale-password
+                                out.println("-1");
                             }
                             conn.close();
                         }catch (Exception e){}
                     break;
-                case "R":   //REGISTRAZIONE
+                case "R":
                         out.println("C");
                         s = in.readLine();
                         cont = s.split("~");
-                        //formato NOME~COGNOME~EMAIL~USERNAME~PASSWORD~CODICEFISCALE~INDIRIZZO~DATADINASCITA
                         try {
                             Connection conn = DriverManager.getConnection(url, username, password);
                             Statement statement = conn.createStatement();
@@ -81,46 +76,54 @@ public class ClientHandler implements Runnable {
                             res.next();
 
                             if (!res.getString("COUNT").equals("0")){
-                                System.err.println("utente esiste già");
                                 out.println("-1");
                             }
                             else {
                                 q="INSERT INTO utentiregistrati (nome, cognome, datanascita, cfiscale, password, username, email, indirizzo) VALUES('"+cont[0]+"', '"+cont[1]+"', '"+cont[7]+"', '"+cont[5]+"', '"+cont[4]+"', '"+cont[3]+"', '"+cont[2]+"', '"+cont[6]+"')";
-                                System.out.println(q);
                                 statement.executeUpdate(q);
                                 q = "SELECT id FROM utentiregistrati WHERE username='"+cont[3]+"'";
-                                System.out.println(q);
                                 res = statement.executeQuery(q);
-                                System.out.println("asdasdasd");
                                 res.next();
                                 out.println(res.getString("id"));
                             }
                             conn.close();
                         }catch (Exception e){}
                     break;
-                case "C":   //CANZONE
+                case "C":
                         out.println("C");
                         String userid = in.readLine();
+
                         try {
                             Connection connection = DriverManager.getConnection(url, username, password);
                             Statement statement = connection.createStatement();
 
-                            //parte 1 - richiesta playlist non valutate
-                            q = "SELECT DISTINCT id, nome FROM playlist WHERE possessore = "+userid+" AND id NOT IN (SELECT idplaylist FROM emozioni WHERE valutata = true)";
-                            ResultSet res = statement.executeQuery(q);
                             String srvres = "";
-                            while (res.next()){
-                                srvres = srvres+res.getString("id")+"~"+res.getString("nome")+"~";
+                            ResultSet res;
+
+                            if (userid.equals("null")){
+                                out.println("n");
+                            }else {
+                                q = "SELECT DISTINCT id, nome FROM playlist WHERE possessore = "+userid+" AND id NOT IN (SELECT idplaylist FROM emozioni WHERE valutata = true)";
+                                res = statement.executeQuery(q);
+                                while (res.next()){
+                                    srvres = srvres+res.getString("id")+"~"+res.getString("nome")+"~";
+                                }
+
+                                if (!srvres.equals("")){
+                                    srvres = srvres.substring(0, srvres.length()-1);
+                                    out.println(srvres);
+                                }else {
+                                    out.println("n");
+                                }
+
+
                             }
-                            srvres = srvres.substring(0, srvres.length()-1);
-                            out.println(srvres);
-                            //parte 2
+
                             srvres = "";
                             s = in.readLine();
                             q = "SELECT AVG(amazement) as amAVG, AVG(solemnity) as solAVG, AVG(tenderness) as tendAVG, AVG(nostalgia) as nosAVG, AVG(calmness) as calAVG, AVG(power) as powAVG, AVG(joy) as joyAVG, AVG(tension) as tensAVG, AVG(sadness) as sadAVG FROM emozioni WHERE idcanzone = '"+s+"' AND valutata = TRUE";
                             res = statement.executeQuery(q);
                             res.next();
-                            //AMAZEMENT~SOLEMNITY~TENDERNESS~NOSTALGIA~CALMNESS~POWER~JOY~TENSION~SADNESS
                             srvres = res.getString("amAVG")+"~"+res.getString("solAVG")+"~"+res.getString("tendAVG")+"~"+res.getString("nosAVG")+"~"+res.getString("calAVG")+"~"+res.getString("powAVG")+"~"+res.getString("joyAVG")+"~"+res.getString("tensAVG")+"~"+ res.getString("sadAVG");
                             out.println(srvres);
 
@@ -142,30 +145,23 @@ public class ClientHandler implements Runnable {
                             }
                             else{
                                 srvres = srvres.substring(0, srvres.length()-1);
-                                //EMOZIONE_N~RECENSIONE~...
                                 out.println(srvres);
                             }
 
 
-                        }catch (Exception e){
-                            System.err.println(e);
-                        }
+                        }catch (Exception e){}
                     break;
-                case "S":   //RICERCA CANZONI
+                case "S":
                         out.println("C");
                         s = in.readLine();
                         s = s.replace("'", "''");
                         try {
                             Connection conn = DriverManager.getConnection(url, username, password);
                             Statement statement = conn.createStatement();
-                            q = "SELECT * FROM canzoni WHERE titolo = '"+s+"' OR autore = '"+s+"'";
+                            q = "SELECT * FROM canzoni WHERE titolo ILIKE '"+s+"' OR autore ILIKE '"+s+"'";
                             ResultSet res =statement.executeQuery(q);
 
-                            //POSSIBILE AGGIUNGERE CANZONI CONSIGLIATE
-                            //BASATE SU SINGOLE PAROLE DELLA STRINGA DI RICERCA
-
                             String srvres = "";
-                            //ID~TITOLO~AUTORE~ANNO
                             if (!res.next()){
                                 out.println("-1");
                             }else {
@@ -177,27 +173,23 @@ public class ClientHandler implements Runnable {
                                 out.println(srvres);
                             }
 
-                        }catch (Exception e){
-                            System.err.println("non va un cazzo");
-                        }
+                        }catch (Exception e){}
                     break;
-                case "P":   //PLAYLIST
+                case "P":
                         out.println("C");
-                        s = in.readLine();  //contiene ID utente
+                        s = in.readLine();
 
 
                         try {
                             Connection conn = DriverManager.getConnection(url, username, password);
                             Statement statement = conn.createStatement();
-                            q="SELECT COUNT(id) FROM playlist WHERE possessore ='"+s+"'";   //NUMERO PLAYLIST CREATE DA UTENTE
-                            System.out.println(q);
+                            q="SELECT COUNT(id) FROM playlist WHERE possessore ='"+s+"'";
                             ResultSet res = statement.executeQuery(q);
                             res.next();
                             String numEl = res.getString("COUNT");
                             out.println(numEl);
                             if (!numEl.equals("0")){
-                                q="SELECT id, nome FROM playlist WHERE possessore = '"+s+"'";   //ELENCO PLAYLIST CREATE DA UTENTE
-                                System.out.println(q);
+                                q="SELECT id, nome FROM playlist WHERE possessore = '"+s+"'";
                                 res= statement.executeQuery(q);
                                 ArrayList<String> arrNm = new ArrayList<String>();
                                 ArrayList<String> arrId = new ArrayList<String>();
@@ -207,11 +199,11 @@ public class ClientHandler implements Runnable {
                                     arrId.add(res.getString("id"));
                                 }
                                 int i=0;
-                                //IDPLAYLIST~NOMEPLAYLIST~NUMEROCANZONI~IDPLAYLIST~NOMEPLAYLIST~NUMEROCANZONI~...
+
                                 String srvresponse = "";
                                 while (i<arrNm.size()){
                                     String idPlaylist = arrId.get(i);
-                                    q="SELECT COUNT(*) FROM emozioni WHERE idplaylist = '"+idPlaylist+"'";  //NUMERO CANZONI IN OGNI PLAYLIST
+                                    q="SELECT COUNT(*) FROM emozioni WHERE idplaylist = '"+idPlaylist+"'";
                                     res= statement.executeQuery(q);
                                     res.next();
                                     String size = res.getString("COUNT");
@@ -223,13 +215,11 @@ public class ClientHandler implements Runnable {
 
                             }
                             conn.close();
-                        }catch (Exception e){
-                            System.err.println(e);
-                        }
+                        }catch (Exception e){}
                     break;
-                case "V":   //VALUTAZIONE pt1 - ritorna nomi canzoni partendo da id playlist
+                case "V":
                     out.println("C");
-                    s = in.readLine(); //id playlist
+                    s = in.readLine();
                     String idplaylist = s;
                     try {
                         Connection conn = DriverManager.getConnection(url, username, password);
@@ -251,14 +241,11 @@ public class ClientHandler implements Runnable {
                             i++;
                         }
                         srvres = srvres.substring(0, srvres.length()-1);
-                        System.out.println(srvres);
                         out.println(srvres);
 
-                    }catch (Exception e){
-                        System.out.println(e);
-                    }
+                    }catch (Exception e){}
                     break;
-                case "Vb": //VALUTAZIONE pt2 - permette di valutare una playlist
+                case "Vb":
                     try {
                         Connection conn = DriverManager.getConnection(url, username, password);
                         Statement statement = conn.createStatement();
@@ -266,8 +253,6 @@ public class ClientHandler implements Runnable {
                         s = in.readLine();
                         String[] val = s.split("~");
 
-                        //IDPLAYLIST ~ CANZONE ~ CANZONE ~ CANZONE
-                        // CANZONE = IDCANZONE ~ EMOZIONE1 VALUTAZIONE ~ EMOZIONE1 RECENSIONE ~ EMOZIONE2 VALUTAZIONE ~ EMOZIONE2 RECENSIONE
                         int len = val.length;
                         int numerocanzoni = (len - 1)/19;
 
@@ -277,17 +262,14 @@ public class ClientHandler implements Runnable {
                         String emozioni[] = {"amazement", "solemnity", "tenderness", "nostalgia", "calmness", "power","joy", "tension", "sadness"};
                         while (i<len){
                             String idcanzone = val[i];
-                            i++; //i corrsiponde a primo elemento in blocco canzone
+                            i++;
                             int j = 0;
                             while (j<9){
                                 q = "UPDATE emozioni SET "+emozioni[j]+" = "+val[i]+" WHERE idplaylist="+idplaylist+" AND idcanzone = '"+idcanzone+"'";
-                                System.out.println(q);
                                 statement.executeUpdate(q);
                                 i++;
-                                //controllo se stringa null
                                 if (!val[i].equals("null")){
                                     q = "UPDATE emozioni SET "+emozioni[j]+"_n = '"+val[i]+"' WHERE idplaylist="+idplaylist+" AND idcanzone = '"+idcanzone+"'";
-                                    System.out.println(q);
                                     statement.executeUpdate(q);
                                 }
                                 i++;
@@ -307,12 +289,10 @@ public class ClientHandler implements Runnable {
                             out.println(srvres);
                         }
 
-                    }catch (Exception e){
-                        System.out.println(e);
-                    }
+                    }catch (Exception e){}
 
                     break;
-                case "I":   //INSERIMENTO ELEMENTI IN PLAYLIST
+                case "I":
                         out.println("C");
                         s = in.readLine();
                         String[] el = s.split("~");
@@ -320,7 +300,6 @@ public class ClientHandler implements Runnable {
                         try {
                             Connection conn = DriverManager.getConnection(url, username, password);
                             Statement statement = conn.createStatement();
-                            //verificare che canzone non sia presete in playlist
                             q = "SELECT COUNT(*) FROM emozioni WHERE idplaylist = "+el[0]+" AND idcanzone = '"+el[1]+"'";
                             ResultSet res = statement.executeQuery(q);
                             res.next();
@@ -331,13 +310,11 @@ public class ClientHandler implements Runnable {
                             }else {
                                 out.println("-1");
                             }
-                        }catch (Exception e){
-                            System.out.println(e);
-                        }
+                        }catch (Exception e){}
                     break;
-                case "A":   //LETTURA CANZONI IN PLAYLIST
+                case "A":
                         out.println("C");
-                        s = in.readLine(); //ID PLAYLIST
+                        s = in.readLine();
                     try {
                         Connection conn = DriverManager.getConnection(url, username, password);
                         Statement statement = conn.createStatement();
@@ -381,13 +358,11 @@ public class ClientHandler implements Runnable {
                         }else {
                             out.println("-1");
                         }
-                    }catch (Exception e){
-                        System.out.println(e);
-                    }
+                    }catch (Exception e){}
                     break;
-                case "B":   //CREA PLAYLIST
+                case "B":
                         out.println("C");
-                        s = in.readLine();  //IDUTENTE~NOMEPLAYLIST
+                        s = in.readLine();
                         el = s.split("~");
                         try {
                             Connection conn = DriverManager.getConnection(url, username, password);
@@ -402,9 +377,7 @@ public class ClientHandler implements Runnable {
                                 statement.executeUpdate(q);
                                 out.println("1");
                             }
-                        }catch (Exception e){
-                            System.out.println(e);
-                        }
+                        }catch (Exception e){}
                     break;
 
             }
@@ -415,57 +388,5 @@ public class ClientHandler implements Runnable {
 
 
     }
-
-
-
-    /*
-    * vecchio metodo run
-    * try {
-            BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-            PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
-            // Configura la connessione al database PostgreSQL
-            try (Connection connection = DriverManager.getConnection(url, username, password)) {
-                System.out.println("Connessione al database stabilita.");
-                String query;
-
-                while ((query = in.readLine()) != null) {
-                    if (query.equalsIgnoreCase("exit")) {
-                        break;
-                    }
-                    try (PreparedStatement statement = connection.prepareStatement(query);
-                        ResultSet resultSet = statement.executeQuery()) {
-
-                        ResultSetMetaData rsmd = resultSet.getMetaData();
-                        int columnCount = rsmd.getColumnCount();
-                        /*
-                            Invia il numero di colonne al client
-                            out.println(columnCount);
-                            Invia i nomi delle colonne al client
-                            for (int i = 1; i <= columnCount; i++) {
-                                out.println(rsmd.getColumnName(i));}
-                        *//*
-                        while (resultSet.next()) {
-                            StringBuilder result = new StringBuilder();
-                            for (int i = 1; i <= columnCount; i++) {
-                                result.append(resultSet.getString(i)).append("\t");
-                            }
-                            out.println(result.toString().trim());
-                        }
-                    } catch (SQLException ex) {
-                        out.println("Errore nella query: " + ex.getMessage());
-                    }
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            } finally {
-                in.close();
-                out.close();
-                clientSocket.close();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    * */
-
 
 }
